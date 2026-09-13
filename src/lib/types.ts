@@ -41,11 +41,22 @@ export interface Partner {
   type: 'advertiser' | 'sponsor'
 }
 
+export interface Run {
+  text: string
+  bold?: boolean
+  italic?: boolean
+  code?: boolean
+  link?: string
+  newTab?: boolean
+}
+/** Sadə mətn (mock) və ya formatlı run-lar (Lexical-dan) */
+export type Inline = string | Run[]
+
 export type RichBlock =
-  | { type: 'paragraph'; text: string }
-  | { type: 'heading'; level: 2 | 3; text: string }
+  | { type: 'paragraph'; text?: string; runs?: Run[] }
+  | { type: 'heading'; level: 2 | 3; text?: string; runs?: Run[] }
   | { type: 'quote'; text: string; cite?: string }
-  | { type: 'list'; ordered?: boolean; items: string[] }
+  | { type: 'list'; ordered?: boolean; items: Inline[] }
   | { type: 'image'; src: string; alt: string; caption?: string; credit?: string }
 
 export interface Article {
@@ -89,9 +100,17 @@ export interface AdCampaign {
   id: string
   partnerId: string
   slot: AdSlotKey
-  creative: { src: string; alt: string }
+  creative?: { src: string; alt: string; w?: number; h?: number }
+  /** HTML kreativ — sandbox iframe-də render olunur */
+  html?: string
   url: string
   locales: Locale[]
+}
+
+export interface SiteSettings {
+  tickerEnabled: boolean
+  social: { network: string; url: string }[]
+  contact: { editorialEmail?: string; salesEmail?: string; phone?: string; address?: string }
 }
 
 export interface Weather {

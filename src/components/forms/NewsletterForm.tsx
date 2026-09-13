@@ -1,9 +1,10 @@
 'use client'
 
 import { useState } from 'react'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import { IconCheck, IconMail } from '@/components/brand/Icons'
+import { Turnstile } from './Turnstile'
 import { cn } from '@/lib/utils'
 
 /**
@@ -13,22 +14,36 @@ import { cn } from '@/lib/utils'
 export function NewsletterForm({
   tone = 'light',
   compact = false,
+  source = 'site',
   className,
 }: {
   tone?: 'light' | 'dark'
   compact?: boolean
+  source?: string
   className?: string
 }) {
   const t = useTranslations('newsletter')
-  const [state, setState] = useState<'idle' | 'loading' | 'success' | 'invalid'>('idle')
+  const locale = useLocale()
+  const [state, setState] = useState<'idle' | 'loading' | 'success' | 'invalid' | 'error'>('idle')
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    const email = String(new FormData(e.currentTarget).get('email') ?? '').trim()
+    const fd = new FormData(e.currentTarget)
+    const email = String(fd.get('email') ?? '').trim()
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return setState('invalid')
     setState('loading')
-    await new Promise((r) => setTimeout(r, 600)) // mock
-    setState('success')
+    try {
+      const res = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ email, locale, source, turnstileToken: fd.get('cf-turnstile-response') ?? undefined }),
+      })
+      const data = (await res.json().catch(() => ({}))) as { error?: string }
+      if (!res.ok) return setState(data.error === 'invalid_email' ? 'invalid' : 'error')
+      setState('success')
+    } catch {
+      setState('error')
+    }
   }
 
   if (state === 'success') {
@@ -87,9 +102,10 @@ export function NewsletterForm({
           {state === 'loading' ? '…' : t('cta')}
         </button>
       </div>
-      {state === 'invalid' && (
+      <Turnstile />
+      {(state === 'invalid' || state === 'error') && (
         <p className={cn('mt-2 text-caption', tone === 'dark' ? 'text-brand-yellow' : 'text-brand-alert')} role="alert">
-          {t('invalid')}
+          {state === 'invalid' ? t('invalid') : t('error')}
         </p>
       )}
       <p className={cn('mt-3 text-caption', tone === 'dark' ? 'text-brand-sky' : 'text-brand-faint')}>

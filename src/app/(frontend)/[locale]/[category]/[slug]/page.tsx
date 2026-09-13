@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import { draftMode } from 'next/headers'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { locales, type Locale } from '@/i18n/routing'
@@ -21,8 +22,12 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Chip } from '@/components/ui/Chip'
 import { Avatar } from '@/components/ui/Avatar'
 import { IconArrowRight } from '@/components/brand/Icons'
+import { PreviewBar } from '@/components/layout/PreviewBar'
 
 type Props = { params: Promise<{ locale: Locale; category: string; slug: string }> }
+
+export const revalidate = 300
+export const dynamicParams = true
 
 export async function generateStaticParams() {
   return getAllArticleParams()
@@ -53,7 +58,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ArticlePage({ params }: Props) {
   const { locale, category, slug } = await params
   setRequestLocale(locale)
-  const a = await getArticleBySlug(locale, category, slug)
+  const { isEnabled: isDraft } = await draftMode()
+  const a = await getArticleBySlug(locale, category, slug, { draft: isDraft })
   if (!a) notFound()
   const t = await getTranslations()
   const related = await getRelated(locale, a, 3)
@@ -79,6 +85,7 @@ export default async function ArticlePage({ params }: Props) {
   return (
     <>
       <SetAlternates links={altPaths(a.alternates)} />
+      {isDraft && <PreviewBar serverURL={SITE_URL} />}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <article className="container-site pt-8 lg:pt-12">

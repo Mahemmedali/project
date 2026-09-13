@@ -1,5 +1,7 @@
 # Good Morning Baku — Texniki Arxitektura (v1.1 — sıfır-büdcə MVP, təsdiq üçün)
 
+> **Tətbiq qeydləri (2026-09-13):** başlıq şrifti Merriweather (ADR-0001), prod domen goodmorningbaku.com (ADR-0002), Next 15.4.11 (ADR-0003), media saxlama (ADR-0004). Mərhələ 1–2 və 4–5-in əsas hissəsi tamamlanıb; bax `README.md`.
+
 > Bu sənəd Claude Code üçün layihə briefi kimi istifadə olunacaq. Təsdiqdən sonra `ARCHITECTURE.md` kimi repo kökünə qoyulur və `CLAUDE.md` faylından ona istinad edilir.
 
 ---

@@ -27,7 +27,10 @@
     "terms": "İstifadə şərtləri",
     "skipToContent": "Məzmuna keç"
   },
-  "ticker": { "label": "Təcili", "live": "Canlı" },
+  "ticker": {
+    "label": "Təcili",
+    "live": "Canlı"
+  },
   "home": {
     "headline": "Manşet",
     "digestTitle": "Səhər xülasəsi",
@@ -68,8 +71,13 @@
     "loadMore": "Daha çox göstər",
     "empty": "Bu bölmədə hələ məqalə yoxdur."
   },
-  "author": { "articles": "Müəllifin məqalələri", "role": "Vəzifə" },
-  "tag": { "title": "Teq: {tag}" },
+  "author": {
+    "articles": "Müəllifin məqalələri",
+    "role": "Vəzifə"
+  },
+  "tag": {
+    "title": "Teq: {tag}"
+  },
   "search": {
     "title": "Axtarış",
     "placeholder": "Nə axtarırsınız?",
@@ -97,7 +105,10 @@
       "one": "Günün 5 əsas xəbəri",
       "two": "Bakının havası və nəqliyyat",
       "three": "Reklamsız, qısa və aydın"
-    }
+    },
+    "confirmedBanner": "Abunəliyiniz təsdiqləndi. Sabah səhər 07:30-da görüşərik!",
+    "confirmFailed": "Təsdiq linki etibarsızdır və ya vaxtı keçib. Yenidən abunə olun.",
+    "unsubscribedBanner": "Abunəlikdən çıxdınız. Fikrinizi dəyişsəniz, yenidən qoşula bilərsiniz."
   },
   "footer": {
     "sections": "Bölmələr",
@@ -120,18 +131,48 @@
     "formatsSubtitle": "Hər format «Reklam» və ya «Tərəfdaş materialı» etiketi ilə işarələnir.",
     "processTitle": "Necə işləyir",
     "process": {
-      "one": { "title": "Sorğu", "text": "Formu doldurun — 1 iş günü ərzində cavab veririk." },
-      "two": { "title": "Təklif", "text": "Məqsədinizə uyğun format, tarix və qiymət təklifi." },
-      "three": { "title": "Müqavilə", "text": "Müqavilə və hesab-faktura — şəffaf şərtlərlə." },
-      "four": { "title": "Yayım", "text": "Kampaniya CMS-dən idarə olunur, hesabat göndərilir." }
+      "one": {
+        "title": "Sorğu",
+        "text": "Formu doldurun — 1 iş günü ərzində cavab veririk."
+      },
+      "two": {
+        "title": "Təklif",
+        "text": "Məqsədinizə uyğun format, tarix və qiymət təklifi."
+      },
+      "three": {
+        "title": "Müqavilə",
+        "text": "Müqavilə və hesab-faktura — şəffaf şərtlərlə."
+      },
+      "four": {
+        "title": "Yayım",
+        "text": "Kampaniya CMS-dən idarə olunur, hesabat göndərilir."
+      }
     },
     "formats": {
-      "display": { "name": "Displey reklam", "desc": "Ana səhifə və məqalə daxili banner slotları. Masaüstü və mobil ölçülər." },
-      "native": { "name": "Nativ reklam", "desc": "Xəbər lentində «Reklam» etiketli kart formatında yerləşdirmə." },
-      "sponsored": { "name": "Sponsorlu məzmun", "desc": "Redaksiya standartlarında hazırlanan, aydın işarələnmiş tərəfdaş materialı." },
-      "newsletter": { "name": "Bülleten sponsorluğu", "desc": "Səhər bülletenində brendinizin yerləşdirilməsi." },
-      "corporate": { "name": "Korporativ abunəlik", "desc": "Şirkət komandası üçün bülleten və xüsusi xülasələr." },
-      "event": { "name": "Tədbir tərəfdaşlığı", "desc": "Tədbirlərin media dəstəyi və işıqlandırılması." }
+      "display": {
+        "name": "Displey reklam",
+        "desc": "Ana səhifə və məqalə daxili banner slotları. Masaüstü və mobil ölçülər."
+      },
+      "native": {
+        "name": "Nativ reklam",
+        "desc": "Xəbər lentində «Reklam» etiketli kart formatında yerləşdirmə."
+      },
+      "sponsored": {
+        "name": "Sponsorlu məzmun",
+        "desc": "Redaksiya standartlarında hazırlanan, aydın işarələnmiş tərəfdaş materialı."
+      },
+      "newsletter": {
+        "name": "Bülleten sponsorluğu",
+        "desc": "Səhər bülletenində brendinizin yerləşdirilməsi."
+      },
+      "corporate": {
+        "name": "Korporativ abunəlik",
+        "desc": "Şirkət komandası üçün bülleten və xüsusi xülasələr."
+      },
+      "event": {
+        "name": "Tədbir tərəfdaşlığı",
+        "desc": "Tədbirlərin media dəstəyi və işıqlandırılması."
+      }
     },
     "stats": {
       "readers": "aylıq oxucu",
@@ -146,15 +187,29 @@
       "download": "PDF yüklə",
       "specsTitle": "Format ölçüləri",
       "specsNote": "Kreativlər sandbox iframe-də göstərilir; JPG, PNG, GIF və HTML5 qəbul edilir.",
-      "columns": { "format": "Format", "size": "Ölçü (px)", "placement": "Yerləşmə", "weight": "Maks. çəki" }
+      "columns": {
+        "format": "Format",
+        "size": "Ölçü (px)",
+        "placement": "Yerləşmə",
+        "weight": "Maks. çəki"
+      }
     },
     "corporate": {
       "title": "Korporativ xidmətlər",
       "subtitle": "Şirkətinizin komandası üçün səhər xülasəsi, sektor üzrə monitorinq və xüsusi bülletenlər.",
       "items": {
-        "one": { "title": "Komanda bülleteni", "text": "Bütün əməkdaşlar üçün gündəlik səhər xülasəsi — brendli və ya standart." },
-        "two": { "title": "Sektor monitorinqi", "text": "Sizin sahənizlə bağlı xəbərlərin həftəlik icmalı." },
-        "three": { "title": "Xüsusi tədqiqat", "text": "Auditoriya sorğuları və şəhər üzrə analitika." }
+        "one": {
+          "title": "Komanda bülleteni",
+          "text": "Bütün əməkdaşlar üçün gündəlik səhər xülasəsi — brendli və ya standart."
+        },
+        "two": {
+          "title": "Sektor monitorinqi",
+          "text": "Sizin sahənizlə bağlı xəbərlərin həftəlik icmalı."
+        },
+        "three": {
+          "title": "Xüsusi tədqiqat",
+          "text": "Auditoriya sorğuları və şəhər üzrə analitika."
+        }
       }
     },
     "form": {
@@ -174,7 +229,12 @@
       "success": "Sorğunuz qəbul edildi. 1 iş günü ərzində cavab verəcəyik.",
       "error": "Xəta baş verdi. Zəhmət olmasa yenidən cəhd edin.",
       "required": "Bu sahə mütləqdir",
-      "budgets": { "b1": "1 000-ə qədər", "b2": "1 000 – 5 000", "b3": "5 000 – 15 000", "b4": "15 000+" },
+      "budgets": {
+        "b1": "1 000-ə qədər",
+        "b2": "1 000 – 5 000",
+        "b3": "5 000 – 15 000",
+        "b4": "15 000+"
+      },
       "privacy": "Məlumatlarınız yalnız sorğunuza cavab vermək üçün istifadə olunur."
     }
   },
@@ -186,10 +246,22 @@
       "mission": "Bakı sakinlərinə hər səhər etibarlı, aydın və vaxtında xəbər çatdırmaq — şəhərin gününə düzgün məlumatla başlamasına kömək etmək.",
       "valuesTitle": "Dəyərlərimiz",
       "values": {
-        "trust": { "title": "Etibarlılıq", "text": "Hər fakt yoxlanılır, hər mənbə göstərilir. Səhv olduqda açıq şəkildə düzəliş edilir." },
-        "speed": { "title": "Sürət", "text": "Xəbər oxucuya ilk növbədə və vaxtında çatır — dəqiqliyi qurban vermədən." },
-        "close": { "title": "Yaxınlıq", "text": "Şəhərin dili ilə danışırıq: sadə, səmimi və oxucuya hörmətlə." },
-        "energy": { "title": "Səhər enerjisi", "text": "Konstruktiv, pozitiv və həll yönümlü baxış — gün yaxşı başlamalıdır." }
+        "trust": {
+          "title": "Etibarlılıq",
+          "text": "Hər fakt yoxlanılır, hər mənbə göstərilir. Səhv olduqda açıq şəkildə düzəliş edilir."
+        },
+        "speed": {
+          "title": "Sürət",
+          "text": "Xəbər oxucuya ilk növbədə və vaxtında çatır — dəqiqliyi qurban vermədən."
+        },
+        "close": {
+          "title": "Yaxınlıq",
+          "text": "Şəhərin dili ilə danışırıq: sadə, səmimi və oxucuya hörmətlə."
+        },
+        "energy": {
+          "title": "Səhər enerjisi",
+          "text": "Konstruktiv, pozitiv və həll yönümlü baxış — gün yaxşı başlamalıdır."
+        }
       },
       "teamTitle": "Redaksiya"
     },
@@ -203,8 +275,14 @@
       "tipTitle": "Xəbəriniz var?",
       "tipText": "Şəhərdə gördüyünüz hadisəni bizə bildirin — mənbə məxfiliyi qorunur."
     },
-    "privacy": { "title": "Məxfilik siyasəti", "updated": "Son yenilənmə: {date}" },
-    "terms": { "title": "İstifadə şərtləri", "updated": "Son yenilənmə: {date}" }
+    "privacy": {
+      "title": "Məxfilik siyasəti",
+      "updated": "Son yenilənmə: {date}"
+    },
+    "terms": {
+      "title": "İstifadə şərtləri",
+      "updated": "Son yenilənmə: {date}"
+    }
   },
   "notFound": {
     "title": "Səhifə tapılmadı",

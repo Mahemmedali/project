@@ -1,15 +1,15 @@
 import { getLocale, getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import type { Locale } from '@/i18n/routing'
-import { getBreaking } from '@/lib/data'
+import { getBreaking, getSiteSettings } from '@/lib/data'
 import { formatTime } from '@/lib/format'
 
 /** Təcili xəbər zolağı — dərin göy fon, sarı etiket. Xəbər yoxdursa render edilmir. */
 export async function Ticker() {
   const locale = (await getLocale()) as Locale
   const t = await getTranslations('ticker')
-  const items = await getBreaking(locale)
-  if (!items.length) return null
+  const [items, settings] = await Promise.all([getBreaking(locale), getSiteSettings(locale)])
+  if (!settings.tickerEnabled || !items.length) return null
 
   const row = items.map((a) => (
     <Link

@@ -5,6 +5,6 @@ import { routing } from './i18n/routing'
 export default createMiddleware(routing)
 
 export const config = {
-  // Statik fayllar, Next daxili yolları, API və admin (Payload, Mərhələ 2) istisna
-  matcher: ['/((?!api|admin|_next|_vercel|.*\\..*).*)'],
+  // Statik fayllar, Next daxili yolları, Payload (api/admin), preview və metadata faylları istisna
+  matcher: ['/((?!api|admin|preview|_next|_vercel|robots\\.txt|sitemap\\.xml|favicon\\.ico|brand/|mock/|media/|fonts/).*)'],
 }

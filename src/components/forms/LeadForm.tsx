@@ -1,7 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
+import { Turnstile } from './Turnstile'
 import { Field, Input, Select, Textarea } from '@/components/ui/Input'
 import { Button } from '@/components/ui/Button'
 import { IconCheck } from '@/components/brand/Icons'
@@ -17,7 +18,8 @@ export function LeadForm({ defaultService }: { defaultService?: (typeof services
   const t = useTranslations('b2b.form')
   const tf = useTranslations('b2b.formats')
   const tc = useTranslations('common')
-  const [state, setState] = useState<'idle' | 'loading' | 'success'>('idle')
+  const locale = useLocale()
+  const [state, setState] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [errors, setErrors] = useState<Record<string, string>>({})
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -29,8 +31,22 @@ export function LeadForm({ defaultService }: { defaultService?: (typeof services
     setErrors(errs)
     if (Object.keys(errs).length) return
     setState('loading')
-    await new Promise((r) => setTimeout(r, 700)) // mock
-    setState('success')
+    try {
+      const payload = Object.fromEntries(fd.entries()) as Record<string, string>
+      const res = await fetch('/api/leads', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ ...payload, locale, turnstileToken: payload['cf-turnstile-response'] }),
+      })
+      const data = (await res.json().catch(() => ({}))) as { error?: string; fields?: Record<string, string> }
+      if (!res.ok) {
+        if (data.fields) setErrors(Object.fromEntries(Object.keys(data.fields).map((k) => [k, t('required')])))
+        return setState('error')
+      }
+      setState('success')
+    } catch {
+      setState('error')
+    }
   }
 
   if (state === 'success') {
@@ -88,6 +104,14 @@ export function LeadForm({ defaultService }: { defaultService?: (typeof services
       <Field label={t('message')} htmlFor="message" optional={tc('optional')}>
         <Textarea id="message" name="message" placeholder={t('messagePlaceholder')} />
       </Field>
+      {/* honeypot */}
+      <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
+      <Turnstile />
+      {state === 'error' && (
+        <p className="text-caption text-brand-alert" role="alert">
+          {t('error')}
+        </p>
+      )}
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-caption text-brand-faint">{t('privacy')}</p>
         <Button type="submit" size="lg" disabled={state === 'loading'}>

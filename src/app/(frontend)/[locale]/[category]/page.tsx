@@ -10,6 +10,8 @@ import { Sidebar } from '@/components/layout/Sidebar'
 import { SetAlternates } from '@/components/layout/AlternatesContext'
 import { Button } from '@/components/ui/Button'
 
+export const revalidate = 300
+
 type Props = { params: Promise<{ locale: Locale; category: string }> }
 
 export async function generateStaticParams() {

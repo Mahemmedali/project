@@ -13,6 +13,8 @@ import { IconArrowRight, IconBriefcase } from '@/components/brand/Icons'
 import { buttonClasses } from '@/components/ui/Button'
 import { formatTime } from '@/lib/format'
 
+export const revalidate = 300
+
 type Props = { params: Promise<{ locale: Locale }> }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

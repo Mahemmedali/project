@@ -1,7 +1,7 @@
 import { getLocale, getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import type { Locale } from '@/i18n/routing'
-import { getCategories } from '@/lib/data'
+import { getCategories, getSiteSettings } from '@/lib/data'
 import { LogoMark } from '@/components/brand/Logo'
 import { SunriseArcs } from '@/components/brand/SunriseArcs'
 import {
@@ -15,20 +15,31 @@ import {
 import { NewsletterForm } from '@/components/forms/NewsletterForm'
 import { LocaleSwitcher } from './LocaleSwitcher'
 
-const socials = [
-  { name: 'Instagram', href: 'https://instagram.com/', Icon: IconInstagram },
-  { name: 'Telegram', href: 'https://t.me/', Icon: IconTelegram },
-  { name: 'Facebook', href: 'https://facebook.com/', Icon: IconFacebook },
-  { name: 'YouTube', href: 'https://youtube.com/', Icon: IconYoutube },
-  { name: 'X', href: 'https://x.com/', Icon: IconXSocial },
-  { name: 'LinkedIn', href: 'https://linkedin.com/', Icon: IconLinkedin },
+const socialIcons: Record<string, { name: string; Icon: typeof IconInstagram }> = {
+  instagram: { name: 'Instagram', Icon: IconInstagram },
+  telegram: { name: 'Telegram', Icon: IconTelegram },
+  facebook: { name: 'Facebook', Icon: IconFacebook },
+  youtube: { name: 'YouTube', Icon: IconYoutube },
+  x: { name: 'X', Icon: IconXSocial },
+  linkedin: { name: 'LinkedIn', Icon: IconLinkedin },
+}
+const defaultSocials = [
+  { network: 'instagram', url: 'https://instagram.com/' },
+  { network: 'telegram', url: 'https://t.me/' },
+  { network: 'facebook', url: 'https://facebook.com/' },
+  { network: 'youtube', url: 'https://youtube.com/' },
+  { network: 'x', url: 'https://x.com/' },
+  { network: 'linkedin', url: 'https://linkedin.com/' },
 ]
 
 export async function Footer() {
   const locale = (await getLocale()) as Locale
   const t = await getTranslations('footer')
   const tn = await getTranslations('nav')
-  const categories = await getCategories(locale)
+  const [categories, settings] = await Promise.all([getCategories(locale), getSiteSettings(locale)])
+  const socials = (settings.social.length ? settings.social : defaultSocials)
+    .filter((s) => socialIcons[s.network])
+    .map((s) => ({ href: s.url, ...socialIcons[s.network] }))
   const year = new Date().getFullYear()
 
   return (

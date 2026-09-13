@@ -10,7 +10,7 @@ import { SunriseArcs } from '@/components/brand/SunriseArcs'
 import { IconCheck } from '@/components/brand/Icons'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 
-type Props = { params: Promise<{ locale: Locale }> }
+type Props = { params: Promise<{ locale: Locale }>; searchParams: Promise<{ confirmed?: string; unsubscribed?: string }> }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
@@ -18,14 +18,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return pageMetadata({ title: t('title'), description: t('subtitle'), locale, alternates: alternatesFor(locale, '/bulleten') })
 }
 
-export default async function NewsletterPage({ params }: Props) {
+export default async function NewsletterPage({ params, searchParams }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
+  const { confirmed, unsubscribed } = await searchParams
   const t = await getTranslations()
+  const banner = confirmed === '1' ? t('newsletter.confirmedBanner') : confirmed === '0' ? t('newsletter.confirmFailed') : unsubscribed === '1' ? t('newsletter.unsubscribedBanner') : null
   const { items } = await getArticles({ locale, limit: 5 })
 
   return (
     <>
+      {banner && (
+        <div className={`px-4 py-3 text-center text-[14px] font-semibold ${confirmed === '0' ? 'bg-brand-alert text-white' : 'bg-brand-yellow text-brand-navy'}`} role="status">
+          {banner}
+        </div>
+      )}
       <section className="relative overflow-hidden bg-brand-blue text-white">
         <SunriseArcs className="h-[150%]" />
         <div className="container-site relative grid gap-10 py-14 lg:grid-cols-2 lg:items-center lg:py-20">

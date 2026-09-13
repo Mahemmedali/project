@@ -27,7 +27,10 @@
     "terms": "Terms of use",
     "skipToContent": "Skip to content"
   },
-  "ticker": { "label": "Breaking", "live": "Live" },
+  "ticker": {
+    "label": "Breaking",
+    "live": "Live"
+  },
   "home": {
     "headline": "Top story",
     "digestTitle": "Morning digest",
@@ -68,8 +71,13 @@
     "loadMore": "Load more",
     "empty": "No articles in this section yet."
   },
-  "author": { "articles": "Articles by the author", "role": "Role" },
-  "tag": { "title": "Tag: {tag}" },
+  "author": {
+    "articles": "Articles by the author",
+    "role": "Role"
+  },
+  "tag": {
+    "title": "Tag: {tag}"
+  },
   "search": {
     "title": "Search",
     "placeholder": "What are you looking for?",
@@ -97,7 +105,10 @@
       "one": "The day's 5 key stories",
       "two": "Baku weather and transport",
       "three": "Ad-free, short and clear"
-    }
+    },
+    "confirmedBanner": "Your subscription is confirmed. See you tomorrow at 07:30!",
+    "confirmFailed": "The confirmation link is invalid or expired. Please subscribe again.",
+    "unsubscribedBanner": "You have been unsubscribed. You can rejoin any time."
   },
   "footer": {
     "sections": "Sections",
@@ -120,18 +131,48 @@
     "formatsSubtitle": "Every format is labelled “Advertisement” or “Partner content”.",
     "processTitle": "How it works",
     "process": {
-      "one": { "title": "Request", "text": "Fill in the form — we reply within one business day." },
-      "two": { "title": "Proposal", "text": "Format, dates and pricing tailored to your goal." },
-      "three": { "title": "Contract", "text": "Contract and invoice with transparent terms." },
-      "four": { "title": "Delivery", "text": "The campaign runs from our CMS; you receive a report." }
+      "one": {
+        "title": "Request",
+        "text": "Fill in the form — we reply within one business day."
+      },
+      "two": {
+        "title": "Proposal",
+        "text": "Format, dates and pricing tailored to your goal."
+      },
+      "three": {
+        "title": "Contract",
+        "text": "Contract and invoice with transparent terms."
+      },
+      "four": {
+        "title": "Delivery",
+        "text": "The campaign runs from our CMS; you receive a report."
+      }
     },
     "formats": {
-      "display": { "name": "Display advertising", "desc": "Banner slots on the homepage and inside articles. Desktop and mobile sizes." },
-      "native": { "name": "Native advertising", "desc": "A labelled card placed in the news feed." },
-      "sponsored": { "name": "Sponsored content", "desc": "Partner material produced to editorial standards and clearly labelled." },
-      "newsletter": { "name": "Newsletter sponsorship", "desc": "Your brand in the morning newsletter." },
-      "corporate": { "name": "Corporate subscription", "desc": "Newsletter and custom digests for your team." },
-      "event": { "name": "Event partnership", "desc": "Media support and coverage for events." }
+      "display": {
+        "name": "Display advertising",
+        "desc": "Banner slots on the homepage and inside articles. Desktop and mobile sizes."
+      },
+      "native": {
+        "name": "Native advertising",
+        "desc": "A labelled card placed in the news feed."
+      },
+      "sponsored": {
+        "name": "Sponsored content",
+        "desc": "Partner material produced to editorial standards and clearly labelled."
+      },
+      "newsletter": {
+        "name": "Newsletter sponsorship",
+        "desc": "Your brand in the morning newsletter."
+      },
+      "corporate": {
+        "name": "Corporate subscription",
+        "desc": "Newsletter and custom digests for your team."
+      },
+      "event": {
+        "name": "Event partnership",
+        "desc": "Media support and coverage for events."
+      }
     },
     "stats": {
       "readers": "monthly readers",
@@ -146,15 +187,29 @@
       "download": "Download PDF",
       "specsTitle": "Format sizes",
       "specsNote": "Creatives run in a sandboxed iframe; JPG, PNG, GIF and HTML5 accepted.",
-      "columns": { "format": "Format", "size": "Size (px)", "placement": "Placement", "weight": "Max. weight" }
+      "columns": {
+        "format": "Format",
+        "size": "Size (px)",
+        "placement": "Placement",
+        "weight": "Max. weight"
+      }
     },
     "corporate": {
       "title": "Corporate services",
       "subtitle": "Morning digests, sector monitoring and custom newsletters for your team.",
       "items": {
-        "one": { "title": "Team newsletter", "text": "A daily morning digest for all employees — branded or standard." },
-        "two": { "title": "Sector monitoring", "text": "A weekly review of news relevant to your industry." },
-        "three": { "title": "Custom research", "text": "Audience surveys and city-level analytics." }
+        "one": {
+          "title": "Team newsletter",
+          "text": "A daily morning digest for all employees — branded or standard."
+        },
+        "two": {
+          "title": "Sector monitoring",
+          "text": "A weekly review of news relevant to your industry."
+        },
+        "three": {
+          "title": "Custom research",
+          "text": "Audience surveys and city-level analytics."
+        }
       }
     },
     "form": {
@@ -174,7 +229,12 @@
       "success": "Your request has been received. We'll reply within one business day.",
       "error": "Something went wrong. Please try again.",
       "required": "This field is required",
-      "budgets": { "b1": "Up to 1,000", "b2": "1,000 – 5,000", "b3": "5,000 – 15,000", "b4": "15,000+" },
+      "budgets": {
+        "b1": "Up to 1,000",
+        "b2": "1,000 – 5,000",
+        "b3": "5,000 – 15,000",
+        "b4": "15,000+"
+      },
       "privacy": "Your details are used only to respond to your request."
     }
   },
@@ -186,10 +246,22 @@
       "mission": "To bring Baku reliable, clear and timely news every morning — helping the city start its day with the right information.",
       "valuesTitle": "Our values",
       "values": {
-        "trust": { "title": "Trust", "text": "Every fact is checked, every source is named. Mistakes are corrected openly." },
-        "speed": { "title": "Speed", "text": "News reaches readers first and on time — without sacrificing accuracy." },
-        "close": { "title": "Closeness", "text": "We speak the city's language: simple, sincere and respectful." },
-        "energy": { "title": "Morning energy", "text": "A constructive, positive and solution-oriented view — the day should start well." }
+        "trust": {
+          "title": "Trust",
+          "text": "Every fact is checked, every source is named. Mistakes are corrected openly."
+        },
+        "speed": {
+          "title": "Speed",
+          "text": "News reaches readers first and on time — without sacrificing accuracy."
+        },
+        "close": {
+          "title": "Closeness",
+          "text": "We speak the city's language: simple, sincere and respectful."
+        },
+        "energy": {
+          "title": "Morning energy",
+          "text": "A constructive, positive and solution-oriented view — the day should start well."
+        }
       },
       "teamTitle": "Editorial team"
     },
@@ -203,8 +275,14 @@
       "tipTitle": "Got a story?",
       "tipText": "Tell us what you saw in the city — sources are kept confidential."
     },
-    "privacy": { "title": "Privacy policy", "updated": "Last updated: {date}" },
-    "terms": { "title": "Terms of use", "updated": "Last updated: {date}" }
+    "privacy": {
+      "title": "Privacy policy",
+      "updated": "Last updated: {date}"
+    },
+    "terms": {
+      "title": "Terms of use",
+      "updated": "Last updated: {date}"
+    }
   },
   "notFound": {
     "title": "Page not found",

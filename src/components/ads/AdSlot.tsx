@@ -21,7 +21,17 @@ export async function AdSlot({ slot, className }: { slot: AdSlotKey; className?:
   return (
     <div className={cn('w-full', className)} data-ad-slot={slot}>
       <p className="label-caps mb-1.5 text-center text-[11px] text-brand-faint">{t('ad')}</p>
-      {campaign ? (
+      {campaign?.html ? (
+        <div className="mx-auto overflow-hidden rounded-card" style={{ maxWidth: s.size.w, aspectRatio: `${s.size.w} / ${s.size.h}` }}>
+          <iframe
+            title={t('ad')}
+            sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox"
+            srcDoc={campaign.html}
+            className="h-full w-full border-0"
+            loading="lazy"
+          />
+        </div>
+      ) : campaign?.creative ? (
         <a
           href={campaign.url}
           target="_blank"
@@ -32,8 +42,8 @@ export async function AdSlot({ slot, className }: { slot: AdSlotKey; className?:
           <Image
             src={campaign.creative.src}
             alt={campaign.creative.alt}
-            width={s.size.w}
-            height={s.size.h}
+            width={campaign.creative.w ?? s.size.w}
+            height={campaign.creative.h ?? s.size.h}
             className="h-auto w-full"
             unoptimized
           />
