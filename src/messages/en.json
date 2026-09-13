@@ -1,0 +1,223 @@
+{
+  "site": {
+    "name": "Good Morning Baku",
+    "tagline": "The morning's first trusted source",
+    "greeting": "Good morning, Baku",
+    "description": "Reliable, clear and timely news for Baku every morning — city, economy, culture and sport."
+  },
+  "nav": {
+    "home": "Home",
+    "latest": "Latest",
+    "menu": "Menu",
+    "close": "Close",
+    "search": "Search",
+    "searchPlaceholder": "Search news, topics or authors…",
+    "subscribe": "Subscribe",
+    "language": "Language",
+    "weather": "Weather",
+    "morningDigest": "Morning digest",
+    "forPartners": "For partners",
+    "advertise": "Advertise",
+    "mediaKit": "Media kit",
+    "corporate": "Corporate",
+    "newsletter": "Newsletter",
+    "about": "About",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "terms": "Terms of use",
+    "skipToContent": "Skip to content"
+  },
+  "ticker": { "label": "Breaking", "live": "Live" },
+  "home": {
+    "headline": "Top story",
+    "digestTitle": "Morning digest",
+    "digestIntro": "Five things to know this morning — in three minutes.",
+    "digestCta": "Get it by email every morning",
+    "latestTitle": "Latest news",
+    "mostRead": "Most read",
+    "allIn": "All in {category}",
+    "viewAll": "View all",
+    "editorsPick": "Editors' pick"
+  },
+  "article": {
+    "readTime": "{minutes} min read",
+    "by": "By",
+    "published": "Published",
+    "updated": "Updated",
+    "share": "Share",
+    "copyLink": "Copy link",
+    "copied": "Copied",
+    "related": "Related stories",
+    "tags": "Tags",
+    "sponsored": "Partner content",
+    "sponsoredBy": "Sponsored by {partner}",
+    "sponsoredNote": "This material was produced with the support of our partner and is clearly separated from editorial content.",
+    "ad": "Advertisement",
+    "premium": "Premium",
+    "breaking": "Breaking",
+    "paywallTitle": "This story is for Premium subscribers",
+    "paywallText": "Ad-free reading, full archive and exclusive analysis — coming soon.",
+    "paywallCta": "Notify me",
+    "notTranslated": "This article is not yet available in {locale}.",
+    "nextArticle": "Next story",
+    "source": "Source",
+    "photo": "Photo"
+  },
+  "category": {
+    "articlesCount": "{count} articles",
+    "loadMore": "Load more",
+    "empty": "No articles in this section yet."
+  },
+  "author": { "articles": "Articles by the author", "role": "Role" },
+  "tag": { "title": "Tag: {tag}" },
+  "search": {
+    "title": "Search",
+    "placeholder": "What are you looking for?",
+    "button": "Search",
+    "results": "{count} results for “{query}”",
+    "noResults": "Nothing found for “{query}”.",
+    "hint": "Type a headline, topic or author name.",
+    "popular": "Popular topics"
+  },
+  "newsletter": {
+    "title": "Morning newsletter",
+    "subtitle": "Every weekday at 07:30 — the day's key stories, weather and city agenda. A three-minute read.",
+    "emailLabel": "Email address",
+    "emailPlaceholder": "name@example.com",
+    "cta": "Subscribe",
+    "consent": "By subscribing you agree to our <privacy>privacy policy</privacy>. Unsubscribe any time.",
+    "success": "Thank you! We've sent a confirmation link to your inbox.",
+    "error": "Something went wrong. Please try again.",
+    "invalid": "Please enter a valid email address.",
+    "archive": "Archive",
+    "subscribers": "{count} subscribers",
+    "frequency": "Every weekday, 07:30",
+    "free": "Free",
+    "benefits": {
+      "one": "The day's 5 key stories",
+      "two": "Baku weather and transport",
+      "three": "Ad-free, short and clear"
+    }
+  },
+  "footer": {
+    "sections": "Sections",
+    "company": "Editorial",
+    "partners": "Partners",
+    "follow": "Follow us",
+    "rights": "© {year} Good Morning Baku. All rights reserved.",
+    "madeIn": "Made in Baku",
+    "newsletterTitle": "Your day starts with Baku.",
+    "newsletterText": "Join our morning newsletter — the day's key stories in your inbox at 07:30."
+  },
+  "b2b": {
+    "eyebrow": "For partners",
+    "title": "Reach Baku's morning audience",
+    "subtitle": "Good Morning Baku — an active 18–45 audience that starts the day with trusted news. Transparent formats, clearly labelled advertising and editorial standards.",
+    "cta": "Send an advertising request",
+    "ctaSecondary": "Download media kit",
+    "statsTitle": "Audience",
+    "formatsTitle": "Formats",
+    "formatsSubtitle": "Every format is labelled “Advertisement” or “Partner content”.",
+    "processTitle": "How it works",
+    "process": {
+      "one": { "title": "Request", "text": "Fill in the form — we reply within one business day." },
+      "two": { "title": "Proposal", "text": "Format, dates and pricing tailored to your goal." },
+      "three": { "title": "Contract", "text": "Contract and invoice with transparent terms." },
+      "four": { "title": "Delivery", "text": "The campaign runs from our CMS; you receive a report." }
+    },
+    "formats": {
+      "display": { "name": "Display advertising", "desc": "Banner slots on the homepage and inside articles. Desktop and mobile sizes." },
+      "native": { "name": "Native advertising", "desc": "A labelled card placed in the news feed." },
+      "sponsored": { "name": "Sponsored content", "desc": "Partner material produced to editorial standards and clearly labelled." },
+      "newsletter": { "name": "Newsletter sponsorship", "desc": "Your brand in the morning newsletter." },
+      "corporate": { "name": "Corporate subscription", "desc": "Newsletter and custom digests for your team." },
+      "event": { "name": "Event partnership", "desc": "Media support and coverage for events." }
+    },
+    "stats": {
+      "readers": "monthly readers",
+      "mobile": "mobile readers",
+      "age": "aged 18–45",
+      "newsletter": "newsletter subscribers"
+    },
+    "statsNote": "Figures are initial targets; updated monthly in the media kit.",
+    "mediaKit": {
+      "title": "Media kit 2026",
+      "subtitle": "Advertising options, audience figures, format sizes and technical requirements.",
+      "download": "Download PDF",
+      "specsTitle": "Format sizes",
+      "specsNote": "Creatives run in a sandboxed iframe; JPG, PNG, GIF and HTML5 accepted.",
+      "columns": { "format": "Format", "size": "Size (px)", "placement": "Placement", "weight": "Max. weight" }
+    },
+    "corporate": {
+      "title": "Corporate services",
+      "subtitle": "Morning digests, sector monitoring and custom newsletters for your team.",
+      "items": {
+        "one": { "title": "Team newsletter", "text": "A daily morning digest for all employees — branded or standard." },
+        "two": { "title": "Sector monitoring", "text": "A weekly review of news relevant to your industry." },
+        "three": { "title": "Custom research", "text": "Audience surveys and city-level analytics." }
+      }
+    },
+    "form": {
+      "title": "Advertising request",
+      "subtitle": "Fill in the form — our partnerships manager will contact you within one business day.",
+      "company": "Company",
+      "contact": "Contact person",
+      "email": "Email",
+      "phone": "Phone",
+      "service": "Service",
+      "servicePlaceholder": "Select",
+      "budget": "Approximate budget (AZN)",
+      "budgetPlaceholder": "Select",
+      "message": "Message",
+      "messagePlaceholder": "Your goal, dates, audience…",
+      "submit": "Send request",
+      "success": "Your request has been received. We'll reply within one business day.",
+      "error": "Something went wrong. Please try again.",
+      "required": "This field is required",
+      "budgets": { "b1": "Up to 1,000", "b2": "1,000 – 5,000", "b3": "5,000 – 15,000", "b4": "15,000+" },
+      "privacy": "Your details are used only to respond to your request."
+    }
+  },
+  "pages": {
+    "about": {
+      "title": "About us",
+      "lead": "Good Morning Baku is a digital media brand delivering reliable, clear and timely news to Baku every morning.",
+      "missionTitle": "Mission",
+      "mission": "To bring Baku reliable, clear and timely news every morning — helping the city start its day with the right information.",
+      "valuesTitle": "Our values",
+      "values": {
+        "trust": { "title": "Trust", "text": "Every fact is checked, every source is named. Mistakes are corrected openly." },
+        "speed": { "title": "Speed", "text": "News reaches readers first and on time — without sacrificing accuracy." },
+        "close": { "title": "Closeness", "text": "We speak the city's language: simple, sincere and respectful." },
+        "energy": { "title": "Morning energy", "text": "A constructive, positive and solution-oriented view — the day should start well." }
+      },
+      "teamTitle": "Editorial team"
+    },
+    "contact": {
+      "title": "Contact",
+      "lead": "Write to us with news, corrections, partnerships or just to say hello.",
+      "editorial": "Editorial",
+      "partnerships": "Partnerships",
+      "address": "Address",
+      "addressValue": "Baku, Azerbaijan",
+      "tipTitle": "Got a story?",
+      "tipText": "Tell us what you saw in the city — sources are kept confidential."
+    },
+    "privacy": { "title": "Privacy policy", "updated": "Last updated: {date}" },
+    "terms": { "title": "Terms of use", "updated": "Last updated: {date}" }
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "The page you're looking for has moved or doesn't exist.",
+    "cta": "Back to home"
+  },
+  "common": {
+    "readMore": "Read more",
+    "loading": "Loading…",
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "minutesAgo": "{count} min ago",
+    "hoursAgo": "{count} h ago",
+    "optional": "optional"
+  }
+}

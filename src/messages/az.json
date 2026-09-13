@@ -1,0 +1,223 @@
+{
+  "site": {
+    "name": "Good Morning Baku",
+    "tagline": "Səhərin ilk etibarlı mənbəyi",
+    "greeting": "Sabahınız xeyir, Bakı",
+    "description": "Bakı sakinlərinə hər səhər etibarlı, aydın və vaxtında xəbər — şəhər, iqtisadiyyat, mədəniyyət və idman."
+  },
+  "nav": {
+    "home": "Ana səhifə",
+    "latest": "Son xəbərlər",
+    "menu": "Menyu",
+    "close": "Bağla",
+    "search": "Axtarış",
+    "searchPlaceholder": "Xəbər, mövzu və ya müəllif axtar…",
+    "subscribe": "Abunə ol",
+    "language": "Dil",
+    "weather": "Hava",
+    "morningDigest": "Səhər xülasəsi",
+    "forPartners": "Tərəfdaşlar üçün",
+    "advertise": "Reklam",
+    "mediaKit": "Media kit",
+    "corporate": "Korporativ",
+    "newsletter": "Bülleten",
+    "about": "Haqqımızda",
+    "contact": "Əlaqə",
+    "privacy": "Məxfilik",
+    "terms": "İstifadə şərtləri",
+    "skipToContent": "Məzmuna keç"
+  },
+  "ticker": { "label": "Təcili", "live": "Canlı" },
+  "home": {
+    "headline": "Manşet",
+    "digestTitle": "Səhər xülasəsi",
+    "digestIntro": "Bu səhər bilməli olduğunuz beş xəbər — üç dəqiqəyə.",
+    "digestCta": "Hər səhər e-poçtla al",
+    "latestTitle": "Son xəbərlər",
+    "mostRead": "Ən çox oxunan",
+    "allIn": "Hamısı: {category}",
+    "viewAll": "Hamısına bax",
+    "editorsPick": "Redaksiyanın seçimi"
+  },
+  "article": {
+    "readTime": "{minutes} dəq oxu",
+    "by": "Müəllif",
+    "published": "Dərc olunub",
+    "updated": "Yenilənib",
+    "share": "Paylaş",
+    "copyLink": "Linki kopyala",
+    "copied": "Kopyalandı",
+    "related": "Əlaqəli xəbərlər",
+    "tags": "Teqlər",
+    "sponsored": "Tərəfdaş materialı",
+    "sponsoredBy": "Sponsor: {partner}",
+    "sponsoredNote": "Bu material tərəfdaşımızın dəstəyi ilə hazırlanıb və redaksiya məzmunundan fərqləndirilir.",
+    "ad": "Reklam",
+    "premium": "Premium",
+    "breaking": "Təcili",
+    "paywallTitle": "Bu material Premium abunəçilər üçündür",
+    "paywallText": "Reklamsız oxu, tam arxiv və eksklüziv analitika — tezliklə.",
+    "paywallCta": "Xəbər ver",
+    "notTranslated": "Bu məqalə hələ {locale} dilində mövcud deyil.",
+    "nextArticle": "Növbəti xəbər",
+    "source": "Mənbə",
+    "photo": "Foto"
+  },
+  "category": {
+    "articlesCount": "{count} məqalə",
+    "loadMore": "Daha çox göstər",
+    "empty": "Bu bölmədə hələ məqalə yoxdur."
+  },
+  "author": { "articles": "Müəllifin məqalələri", "role": "Vəzifə" },
+  "tag": { "title": "Teq: {tag}" },
+  "search": {
+    "title": "Axtarış",
+    "placeholder": "Nə axtarırsınız?",
+    "button": "Axtar",
+    "results": "«{query}» üzrə {count} nəticə",
+    "noResults": "«{query}» üzrə heç nə tapılmadı.",
+    "hint": "Xəbər başlığı, mövzu və ya müəllif adı yazın.",
+    "popular": "Populyar mövzular"
+  },
+  "newsletter": {
+    "title": "Səhər bülleteni",
+    "subtitle": "Hər iş günü saat 07:30-da — günün əsas xəbərləri, hava və şəhər gündəmi. Üç dəqiqəlik oxu.",
+    "emailLabel": "E-poçt ünvanı",
+    "emailPlaceholder": "ad@nümunə.az",
+    "cta": "Abunə ol",
+    "consent": "Abunə olmaqla <privacy>məxfilik siyasəti</privacy> ilə razılaşırsınız. İstənilən vaxt imtina edə bilərsiniz.",
+    "success": "Təşəkkürlər! E-poçtunuza təsdiq linki göndərdik.",
+    "error": "Xəta baş verdi. Zəhmət olmasa yenidən cəhd edin.",
+    "invalid": "Düzgün e-poçt ünvanı daxil edin.",
+    "archive": "Arxiv",
+    "subscribers": "{count} abunəçi",
+    "frequency": "Hər iş günü, 07:30",
+    "free": "Pulsuz",
+    "benefits": {
+      "one": "Günün 5 əsas xəbəri",
+      "two": "Bakının havası və nəqliyyat",
+      "three": "Reklamsız, qısa və aydın"
+    }
+  },
+  "footer": {
+    "sections": "Bölmələr",
+    "company": "Redaksiya",
+    "partners": "Tərəfdaşlar",
+    "follow": "Bizi izləyin",
+    "rights": "© {year} Good Morning Baku. Bütün hüquqlar qorunur.",
+    "madeIn": "Bakıda hazırlanıb",
+    "newsletterTitle": "Gününüz Bakı ilə başlayır.",
+    "newsletterText": "Səhər bülletenimizə qoşulun — günün əsas xəbərləri 07:30-da e-poçtunuzda."
+  },
+  "b2b": {
+    "eyebrow": "Tərəfdaşlar üçün",
+    "title": "Bakının səhər auditoriyasına çatın",
+    "subtitle": "Good Morning Baku — şəhərin gününə etibarlı xəbərlə başlayan 18–45 yaşlı aktiv auditoriya. Şəffaf formatlar, aydın işarələnmiş reklam və redaksiya standartları.",
+    "cta": "Reklam sorğusu göndər",
+    "ctaSecondary": "Media kiti yüklə",
+    "statsTitle": "Auditoriya",
+    "formatsTitle": "Formatlar",
+    "formatsSubtitle": "Hər format «Reklam» və ya «Tərəfdaş materialı» etiketi ilə işarələnir.",
+    "processTitle": "Necə işləyir",
+    "process": {
+      "one": { "title": "Sorğu", "text": "Formu doldurun — 1 iş günü ərzində cavab veririk." },
+      "two": { "title": "Təklif", "text": "Məqsədinizə uyğun format, tarix və qiymət təklifi." },
+      "three": { "title": "Müqavilə", "text": "Müqavilə və hesab-faktura — şəffaf şərtlərlə." },
+      "four": { "title": "Yayım", "text": "Kampaniya CMS-dən idarə olunur, hesabat göndərilir." }
+    },
+    "formats": {
+      "display": { "name": "Displey reklam", "desc": "Ana səhifə və məqalə daxili banner slotları. Masaüstü və mobil ölçülər." },
+      "native": { "name": "Nativ reklam", "desc": "Xəbər lentində «Reklam» etiketli kart formatında yerləşdirmə." },
+      "sponsored": { "name": "Sponsorlu məzmun", "desc": "Redaksiya standartlarında hazırlanan, aydın işarələnmiş tərəfdaş materialı." },
+      "newsletter": { "name": "Bülleten sponsorluğu", "desc": "Səhər bülletenində brendinizin yerləşdirilməsi." },
+      "corporate": { "name": "Korporativ abunəlik", "desc": "Şirkət komandası üçün bülleten və xüsusi xülasələr." },
+      "event": { "name": "Tədbir tərəfdaşlığı", "desc": "Tədbirlərin media dəstəyi və işıqlandırılması." }
+    },
+    "stats": {
+      "readers": "aylıq oxucu",
+      "mobile": "mobil oxucu",
+      "age": "18–45 yaş",
+      "newsletter": "bülleten abunəçisi"
+    },
+    "statsNote": "Rəqəmlər ilkin hədəf göstəricilərdir; media kitdə hər ay yenilənir.",
+    "mediaKit": {
+      "title": "Media kit 2026",
+      "subtitle": "Reklam imkanları, auditoriya rəqəmləri, format ölçüləri və texniki tələblər.",
+      "download": "PDF yüklə",
+      "specsTitle": "Format ölçüləri",
+      "specsNote": "Kreativlər sandbox iframe-də göstərilir; JPG, PNG, GIF və HTML5 qəbul edilir.",
+      "columns": { "format": "Format", "size": "Ölçü (px)", "placement": "Yerləşmə", "weight": "Maks. çəki" }
+    },
+    "corporate": {
+      "title": "Korporativ xidmətlər",
+      "subtitle": "Şirkətinizin komandası üçün səhər xülasəsi, sektor üzrə monitorinq və xüsusi bülletenlər.",
+      "items": {
+        "one": { "title": "Komanda bülleteni", "text": "Bütün əməkdaşlar üçün gündəlik səhər xülasəsi — brendli və ya standart." },
+        "two": { "title": "Sektor monitorinqi", "text": "Sizin sahənizlə bağlı xəbərlərin həftəlik icmalı." },
+        "three": { "title": "Xüsusi tədqiqat", "text": "Auditoriya sorğuları və şəhər üzrə analitika." }
+      }
+    },
+    "form": {
+      "title": "Reklam sorğusu",
+      "subtitle": "Formu doldurun — tərəfdaşlıq üzrə menecerimiz 1 iş günü ərzində sizinlə əlaqə saxlayacaq.",
+      "company": "Şirkət",
+      "contact": "Əlaqə şəxsi",
+      "email": "E-poçt",
+      "phone": "Telefon",
+      "service": "Xidmət",
+      "servicePlaceholder": "Seçin",
+      "budget": "Təxmini büdcə (AZN)",
+      "budgetPlaceholder": "Seçin",
+      "message": "Mesaj",
+      "messagePlaceholder": "Məqsədiniz, tarixlər, auditoriya…",
+      "submit": "Sorğu göndər",
+      "success": "Sorğunuz qəbul edildi. 1 iş günü ərzində cavab verəcəyik.",
+      "error": "Xəta baş verdi. Zəhmət olmasa yenidən cəhd edin.",
+      "required": "Bu sahə mütləqdir",
+      "budgets": { "b1": "1 000-ə qədər", "b2": "1 000 – 5 000", "b3": "5 000 – 15 000", "b4": "15 000+" },
+      "privacy": "Məlumatlarınız yalnız sorğunuza cavab vermək üçün istifadə olunur."
+    }
+  },
+  "pages": {
+    "about": {
+      "title": "Haqqımızda",
+      "lead": "Good Morning Baku — Bakı sakinlərinə hər səhər etibarlı, aydın və vaxtında xəbər çatdıran rəqəmsal media.",
+      "missionTitle": "Missiya",
+      "mission": "Bakı sakinlərinə hər səhər etibarlı, aydın və vaxtında xəbər çatdırmaq — şəhərin gününə düzgün məlumatla başlamasına kömək etmək.",
+      "valuesTitle": "Dəyərlərimiz",
+      "values": {
+        "trust": { "title": "Etibarlılıq", "text": "Hər fakt yoxlanılır, hər mənbə göstərilir. Səhv olduqda açıq şəkildə düzəliş edilir." },
+        "speed": { "title": "Sürət", "text": "Xəbər oxucuya ilk növbədə və vaxtında çatır — dəqiqliyi qurban vermədən." },
+        "close": { "title": "Yaxınlıq", "text": "Şəhərin dili ilə danışırıq: sadə, səmimi və oxucuya hörmətlə." },
+        "energy": { "title": "Səhər enerjisi", "text": "Konstruktiv, pozitiv və həll yönümlü baxış — gün yaxşı başlamalıdır." }
+      },
+      "teamTitle": "Redaksiya"
+    },
+    "contact": {
+      "title": "Əlaqə",
+      "lead": "Xəbər, düzəliş, tərəfdaşlıq və ya sadəcə salam üçün yazın.",
+      "editorial": "Redaksiya",
+      "partnerships": "Tərəfdaşlıq",
+      "address": "Ünvan",
+      "addressValue": "Bakı, Azərbaycan",
+      "tipTitle": "Xəbəriniz var?",
+      "tipText": "Şəhərdə gördüyünüz hadisəni bizə bildirin — mənbə məxfiliyi qorunur."
+    },
+    "privacy": { "title": "Məxfilik siyasəti", "updated": "Son yenilənmə: {date}" },
+    "terms": { "title": "İstifadə şərtləri", "updated": "Son yenilənmə: {date}" }
+  },
+  "notFound": {
+    "title": "Səhifə tapılmadı",
+    "text": "Axtardığınız səhifə köçürülüb və ya mövcud deyil.",
+    "cta": "Ana səhifəyə qayıt"
+  },
+  "common": {
+    "readMore": "Ətraflı",
+    "loading": "Yüklənir…",
+    "today": "Bu gün",
+    "yesterday": "Dünən",
+    "minutesAgo": "{count} dəq əvvəl",
+    "hoursAgo": "{count} saat əvvəl",
+    "optional": "istəyə görə"
+  }
+}
