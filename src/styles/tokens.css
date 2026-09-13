@@ -1,0 +1,54 @@
+/* Good Morning Baku — dizayn tokenləri (Brend kitabı v1.0, Sentyabr 2026) */
+@theme {
+  /* Rənglər */
+  --color-brand-blue: #0424d9; /* Səhər mavisi — əsas: loqo fonu, düymələr, keçidlər */
+  --color-brand-navy: #03178c; /* Dərin göy — başlıqlar, tünd fonlar, footer, hover */
+  --color-brand-yellow: #f2e74b; /* Şəfəq sarısı — vurğu, etiketlər (yalnız mavi fon üzərində) */
+  --color-brand-gold: #f2c744; /* Günəş qızılı — "Təcili", "Reklam" etiketləri */
+  --color-brand-ink: #0d0d0d; /* Mürəkkəb qarası — mətn */
+  --color-brand-surface: #f6f7fb; /* Açıq boz səth */
+  --color-brand-tint: #eef1fb; /* Kart fonu */
+  --color-brand-line: #dce0f0; /* Ayırıcı xətlər */
+  --color-brand-muted: #5b6280; /* İkincil mətn */
+  --color-brand-faint: #646c8f; /* Tarix, izah — ağ fonda 5,1:1 (WCAG AA) */
+  --color-brand-sky: #c9d0f6; /* Mavi fon üzərində ikincil mətn */
+  --color-brand-alert: #d62828; /* Xəta */
+
+  /* Şriftlər */
+  --font-heading: 'Merriweather', 'Merriweather Fallback', Georgia, 'Times New Roman', serif;
+  --font-body: var(--font-inter), Arial, Helvetica, sans-serif;
+
+  /* Radius */
+  --radius-card: 16px;
+  --radius-btn: 8px;
+  --radius-chip: 999px;
+
+  /* Kölgə (yalnız UI səthləri üçün; loqoda istifadə edilmir) */
+  --shadow-card: 0 1px 2px rgb(3 23 140 / 0.06), 0 8px 24px -12px rgb(3 23 140 / 0.18);
+  --shadow-float: 0 12px 40px -16px rgb(3 23 140 / 0.35);
+
+  /* Tipoqrafik iyerarxiya (brend kitabı, veb) */
+  --text-h1: 40px;
+  --text-h1--line-height: 48px;
+  --text-h2: 28px;
+  --text-h2--line-height: 36px;
+  --text-h3: 20px;
+  --text-h3--line-height: 28px;
+  --text-lead: 18px;
+  --text-lead--line-height: 28px;
+  --text-body: 16px;
+  --text-body--line-height: 26px;
+  --text-label: 13px;
+  --text-label--line-height: 16px;
+  --text-caption: 13px;
+  --text-caption--line-height: 18px;
+
+  /* Konteyner */
+  --container-site: 1200px;
+
+  --animate-ticker: ticker 40s linear infinite;
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+}

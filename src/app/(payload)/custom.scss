@@ -1,0 +1,16 @@
+/* Admin panel — brend rəngləri */
+:root {
+  --theme-success-500: #0424d9;
+  --color-brand-blue: #0424d9;
+  --color-brand-navy: #03178c;
+  --color-brand-yellow: #f2e74b;
+}
+.nav__brand,
+.template-default__nav-toggler {
+  color: var(--color-brand-navy);
+}
+.btn--style-primary {
+  --color: #fff;
+  --bg-color: var(--color-brand-blue);
+  --hover-bg: var(--color-brand-navy);
+}

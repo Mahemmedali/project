@@ -1,0 +1,106 @@
+@import 'tailwindcss';
+@import './tokens.css';
+
+/* Merriweather 700 — self-host (public/fonts), alt-dəstlər unicode-range ilə: AZ/EN səhifə kirili yükləmir */
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/merriweather-latin-700-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/merriweather-latin-ext-700-normal.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/merriweather-cyrillic-700-normal.woff2') format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* Ehtiyat şrift metrikası — CLS-i azaltmaq üçün Georgia Merriweather-ə uyğunlaşdırılır */
+@font-face {
+  font-family: 'Merriweather Fallback';
+  src: local('Georgia'), local('Times New Roman');
+  size-adjust: 108%;
+  ascent-override: 92%;
+  descent-override: 26%;
+  line-gap-override: 0%;
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white font-body text-body text-brand-ink antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-heading font-bold text-brand-navy;
+    text-wrap: balance;
+  }
+  ::selection {
+    background: var(--color-brand-yellow);
+    color: var(--color-brand-navy);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-brand-blue);
+    outline-offset: 2px;
+  }
+  a {
+    @apply underline-offset-4;
+  }
+}
+
+@utility container-site {
+  @apply mx-auto w-full max-w-site px-4 sm:px-6 lg:px-8;
+}
+
+@utility label-caps {
+  @apply font-body text-label font-semibold uppercase tracking-[0.08em];
+}
+
+/* Zəngin mətn (məqalə gövdəsi) */
+.prose-gmb {
+  @apply text-[17px] leading-[1.75] text-brand-ink;
+}
+.prose-gmb > * + * {
+  margin-top: 1.25em;
+}
+.prose-gmb h2 {
+  @apply mt-10 text-h2;
+}
+.prose-gmb h3 {
+  @apply mt-8 text-h3;
+}
+.prose-gmb a {
+  @apply text-brand-blue underline decoration-brand-blue/40 hover:decoration-brand-blue;
+}
+.prose-gmb blockquote {
+  @apply border-l-4 border-brand-yellow bg-brand-surface py-4 pr-4 pl-6 font-heading text-lead text-brand-navy;
+  border-radius: 0 var(--radius-card) var(--radius-card) 0;
+}
+.prose-gmb ul {
+  @apply list-disc pl-6;
+}
+.prose-gmb ol {
+  @apply list-decimal pl-6;
+}
+.prose-gmb li + li {
+  margin-top: 0.5em;
+}
+.prose-gmb figure figcaption {
+  @apply mt-2 text-caption text-brand-faint;
+}
