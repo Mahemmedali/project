@@ -3,6 +3,7 @@ import { articleCreate, articleUpdate, isAdminOrEditor, publishedOrStaff } from 
 import { formatSlug } from '@/hooks/slug'
 import { revalidateArticle, revalidateArticleDelete } from '@/hooks/revalidate'
 import { authorCannotPublish, computeReadingTime, setCreatedBy } from '@/hooks/article'
+import { articleView } from '@/endpoints/views'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'
 
@@ -23,6 +24,7 @@ export const Articles: CollectionConfig = {
   access: { read: publishedOrStaff, create: articleCreate, update: articleUpdate, delete: isAdminOrEditor },
   versions: { drafts: { autosave: { interval: 1500 } }, maxPerDoc: 25 },
   defaultSort: '-publishedAt',
+  endpoints: [articleView],
   hooks: {
     beforeChange: [setCreatedBy, computeReadingTime, authorCannotPublish],
     afterChange: [revalidateArticle],

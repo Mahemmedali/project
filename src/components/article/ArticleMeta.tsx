@@ -11,11 +11,14 @@ export function ArticleMeta({
   article,
   tone = 'light',
   showDate = false,
+  linkCategory = false,
   className,
 }: {
   article: ArticleView
   tone?: 'light' | 'dark'
   showDate?: boolean
+  /** Kart daxilində (özü link olan) false — <a> içində <a> olmaz */
+  linkCategory?: boolean
   className?: string
 }) {
   const locale = useLocale() as Locale
@@ -25,14 +28,18 @@ export function ArticleMeta({
     <div className={cn('flex flex-wrap items-center gap-x-2 gap-y-1.5 text-caption', muted, className)}>
       {article.isSponsored ? (
         <Badge variant="sponsored">{t('sponsored')}</Badge>
-      ) : (
+      ) : linkCategory ? (
         <Link
           href={{ pathname: '/[category]', params: { category: article.category.slug } }}
-          className="label-caps text-brand-blue hover:text-brand-navy"
+          className="label-caps -my-1 inline-flex min-h-6 items-center py-1 text-brand-blue hover:text-brand-navy"
           style={tone === 'dark' ? { color: 'var(--color-brand-yellow)' } : undefined}
         >
           {article.category.name}
         </Link>
+      ) : (
+        <span className="label-caps text-brand-blue" style={tone === 'dark' ? { color: 'var(--color-brand-yellow)' } : undefined}>
+          {article.category.name}
+        </span>
       )}
       {article.isBreaking && <Badge variant="breaking">{t('breaking')}</Badge>}
       {article.isPremium && <Badge variant="premium">{t('premium')}</Badge>}

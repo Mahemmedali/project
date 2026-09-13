@@ -39,8 +39,9 @@ function tagView(id: string, locale: Locale): TagView {
   return { id: t.id, slug: t.slug[locale], name: t.name[locale] }
 }
 
+/** CMS ilə eyni qayda: başlıq + slug + mətn olmalıdır */
 function isAvailable(a: Article, locale: Locale) {
-  return a.status === 'published' && Boolean(a.title[locale] && a.slug[locale])
+  return a.status === 'published' && Boolean(a.title[locale] && a.slug[locale] && a.body[locale]?.length)
 }
 
 function toView(a: Article, locale: Locale): ArticleView {

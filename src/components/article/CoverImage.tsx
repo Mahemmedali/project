@@ -21,6 +21,7 @@ export function CoverImage({
         alt={alt}
         fill
         priority={priority}
+        fetchPriority={priority ? 'high' : undefined}
         sizes={sizes}
         className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
       />

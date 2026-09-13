@@ -62,7 +62,7 @@ export default async function AdvertisePage({ params }: Props) {
           {stats.map(({ Icon, value, label }) => (
             <div key={label} className="rounded-card bg-brand-tint p-6">
               <Icon size={22} className="text-brand-blue" />
-              <p className="mt-4 font-heading text-[40px] leading-none font-black text-brand-navy">{value}</p>
+              <p className="mt-4 font-heading text-[40px] leading-none font-bold text-brand-navy">{value}</p>
               <p className="mt-2 text-[14px] text-brand-muted">{label}</p>
             </div>
           ))}
@@ -104,7 +104,7 @@ export default async function AdvertisePage({ params }: Props) {
           <ol className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {(['one', 'two', 'three', 'four'] as const).map((k, i) => (
               <li key={k} className="border-t border-white/15 pt-4">
-                <span className="font-heading text-[32px] leading-none font-black text-brand-yellow">0{i + 1}</span>
+                <span className="font-heading text-[32px] leading-none font-bold text-brand-yellow">0{i + 1}</span>
                 <h3 className="mt-3 text-h3 text-white">{t(`process.${k}.title`)}</h3>
                 <p className="mt-1 text-[14px] text-brand-sky">{t(`process.${k}.text`)}</p>
               </li>

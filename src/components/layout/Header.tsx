@@ -48,7 +48,7 @@ export async function Header() {
           <Link href="/" className="flex items-center gap-3" aria-label={ts('name')}>
             <LogoMark size={48} priority className="lg:hidden" />
             <LogoMark size={56} priority className="hidden lg:block" />
-            <span className="hidden font-heading text-[17px] leading-tight font-black text-brand-navy sm:block">
+            <span className="hidden font-heading text-[17px] leading-tight font-bold text-brand-navy sm:block">
               Good Morning
               <br />
               Baku

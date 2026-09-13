@@ -32,7 +32,7 @@ export async function Ticker() {
         <div className="relative flex-1 overflow-hidden">
           <div className="flex w-max animate-ticker whitespace-nowrap motion-reduce:animate-none">
             <span className="flex">{row}</span>
-            <span className="flex" aria-hidden>
+            <span className="flex" aria-hidden inert>
               {row}
             </span>
           </div>

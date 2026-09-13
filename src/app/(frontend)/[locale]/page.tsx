@@ -55,7 +55,7 @@ export default async function HomePage({ params }: Props) {
               <ol className="mt-5 space-y-3.5">
                 {digest.map((a, i) => (
                   <li key={a.id} className="flex gap-3 border-t border-white/15 pt-3.5">
-                    <span className="font-heading text-[18px] leading-tight font-black text-brand-yellow">{i + 1}</span>
+                    <span className="font-heading text-[18px] leading-tight font-bold text-brand-yellow">{i + 1}</span>
                     <Link
                       href={{ pathname: '/[category]/[slug]', params: { category: a.category.slug, slug: a.slug } }}
                       className="group block"

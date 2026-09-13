@@ -11,3 +11,8 @@ next-env.d.ts
 
 # Payload
 /public/media
+
+# Testlər
+/test-results
+/playwright-report
+/lighthouse.html

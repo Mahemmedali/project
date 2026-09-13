@@ -69,7 +69,7 @@ export default async function NewsletterPage({ params, searchParams }: Props) {
             <ol className="mt-4 space-y-3">
               {items.map((a, i) => (
                 <li key={a.id} className="flex gap-3">
-                  <span className="font-heading text-[16px] font-black text-brand-blue">{i + 1}</span>
+                  <span className="font-heading text-[16px] font-bold text-brand-blue">{i + 1}</span>
                   <div>
                     <p className="text-[14px] leading-snug font-semibold text-brand-navy">{a.title}</p>
                     <p className="text-caption text-brand-faint">

@@ -297,5 +297,17 @@
     "minutesAgo": "{count} dəq əvvəl",
     "hoursAgo": "{count} saat əvvəl",
     "optional": "istəyə görə"
+  },
+  "consent": {
+    "title": "Kuki və analitika",
+    "text": "Saytı yaxşılaşdırmaq üçün anonim analitika (Google Analytics) istifadə edirik. Razılıq verirsiniz?",
+    "more": "Ətraflı",
+    "accept": "Razıyam",
+    "decline": "İmtina"
+  },
+  "error": {
+    "title": "Xəta baş verdi",
+    "text": "Səhifəni yükləyərkən problem yarandı. Yenidən cəhd edin.",
+    "retry": "Yenidən cəhd et"
   }
 }

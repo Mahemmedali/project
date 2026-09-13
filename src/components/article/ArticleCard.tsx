@@ -99,7 +99,7 @@ export function ArticleCard({
     return (
       <article className={cn('group', className)}>
         <Link href={href} className="flex gap-4">
-          <span className="w-8 shrink-0 font-heading text-[32px] leading-none font-black text-brand-blue/30 group-hover:text-brand-blue">
+          <span aria-hidden className="w-8 shrink-0 font-heading text-[32px] leading-none font-bold text-brand-blue/80 group-hover:text-brand-blue">
             {String(index ?? 0).padStart(2, '0')}
           </span>
           <div className="min-w-0">

@@ -26,6 +26,17 @@ pnpm dev                        # http://localhost:3000 → /az ; admin: /admin
 | `pnpm seed` | İlkin məzmun (yalnız boş bazada) |
 | `pnpm vercel-build` | Vercel üçün: `migrate && next build` |
 
+## Keyfiyyət (Mərhələ 6)
+
+| Komanda | Nə edir |
+|---|---|
+| `pnpm test` | Vitest — slug, Lexical çevirmə, format, mock məlumat qatı, rate limit |
+| `pnpm test:e2e` | Playwright (masaüstü + mobil): səhifələr, dil keçidi, formalar, sitemap/RSS, **axe** a11y (WCAG 2.1 AA) |
+| `pnpm lighthouse` | Lighthouse hesabatı (`lighthouse.html`), server işləyərkən |
+
+CI (`.github/workflows/ci.yml`): lint → typecheck → unit → build (mock rejimi, DB-siz) → e2e. Həftəlik backup (`backup.yml`): `pg_dump` → R2, 8 həftə saxlanılır.
+Təhlükəsizlik başlıqları (`next.config.ts`): CSP, HSTS (yalnız https), Permissions-Policy, nosniff. Analitika: Cloudflare Web Analytics (cookie-siz) + istəyə görə GA4 razılıq banneri ilə (ADR-0006).
+
 ## Struktur
 
 - `src/app/(frontend)/[locale]/…` — sayt (AZ/EN/RU, lokallaşdırılmış URL-lər `src/i18n/routing.ts`)

@@ -297,5 +297,17 @@
     "minutesAgo": "{count} min ago",
     "hoursAgo": "{count} h ago",
     "optional": "optional"
+  },
+  "consent": {
+    "title": "Cookies and analytics",
+    "text": "We use anonymous analytics (Google Analytics) to improve the site. Do you agree?",
+    "more": "Learn more",
+    "accept": "Accept",
+    "decline": "Decline"
+  },
+  "error": {
+    "title": "Something went wrong",
+    "text": "There was a problem loading this page. Please try again.",
+    "retry": "Try again"
   }
 }

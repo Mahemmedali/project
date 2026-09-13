@@ -1,0 +1,42 @@
+name: DB backup
+
+# Həftəlik pg_dump → Cloudflare R2 (ARCHITECTURE.md §9). Secrets: DATABASE_URI, R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY, R2_BACKUP_BUCKET
+on:
+  schedule:
+    - cron: '0 2 * * 0' # bazar günləri 02:00 UTC
+  workflow_dispatch:
+
+jobs:
+  dump:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: pg_dump
+        env:
+          DATABASE_URI: ${{ secrets.DATABASE_URI }}
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq postgresql-client
+          FILE="gmb-$(date -u +%Y%m%d-%H%M).sql.gz"
+          pg_dump "$DATABASE_URI" --no-owner --no-privileges | gzip -9 > "$FILE"
+          echo "FILE=$FILE" >> "$GITHUB_ENV"
+          ls -la "$FILE"
+      - name: Upload to R2
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: auto
+        run: |
+          aws s3 cp "$FILE" "s3://${{ secrets.R2_BACKUP_BUCKET }}/db/$FILE" \
+            --endpoint-url "https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com"
+      - name: Prune (>8 həftə)
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: auto
+        run: |
+          EP="https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com"
+          CUTOFF=$(date -u -d '56 days ago' +%Y%m%d)
+          aws s3 ls "s3://${{ secrets.R2_BACKUP_BUCKET }}/db/" --endpoint-url "$EP" | awk '{print $4}' | while read -r f; do
+            d=$(echo "$f" | sed -E 's/gmb-([0-9]{8}).*/\1/')
+            [ -n "$d" ] && [ "$d" -lt "$CUTOFF" ] && aws s3 rm "s3://${{ secrets.R2_BACKUP_BUCKET }}/db/$f" --endpoint-url "$EP" || true
+          done

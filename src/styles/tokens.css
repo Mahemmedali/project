@@ -10,12 +10,12 @@
   --color-brand-tint: #eef1fb; /* Kart fonu */
   --color-brand-line: #dce0f0; /* Ayırıcı xətlər */
   --color-brand-muted: #5b6280; /* İkincil mətn */
-  --color-brand-faint: #9aa1bd; /* Tarix, izah */
+  --color-brand-faint: #646c8f; /* Tarix, izah — ağ fonda 5,1:1 (WCAG AA) */
   --color-brand-sky: #c9d0f6; /* Mavi fon üzərində ikincil mətn */
   --color-brand-alert: #d62828; /* Xəta */
 
   /* Şriftlər */
-  --font-heading: var(--font-merriweather), Georgia, 'Times New Roman', serif;
+  --font-heading: 'Merriweather', 'Merriweather Fallback', Georgia, 'Times New Roman', serif;
   --font-body: var(--font-inter), Arial, Helvetica, sans-serif;
 
   /* Radius */

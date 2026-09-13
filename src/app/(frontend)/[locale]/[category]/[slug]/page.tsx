@@ -23,6 +23,7 @@ import { Chip } from '@/components/ui/Chip'
 import { Avatar } from '@/components/ui/Avatar'
 import { IconArrowRight } from '@/components/brand/Icons'
 import { PreviewBar } from '@/components/layout/PreviewBar'
+import { ViewBeacon } from '@/components/article/ViewBeacon'
 
 type Props = { params: Promise<{ locale: Locale; category: string; slug: string }> }
 
@@ -85,7 +86,7 @@ export default async function ArticlePage({ params }: Props) {
   return (
     <>
       <SetAlternates links={altPaths(a.alternates)} />
-      {isDraft && <PreviewBar serverURL={SITE_URL} />}
+      {isDraft ? <PreviewBar serverURL={SITE_URL} /> : <ViewBeacon id={a.id} />}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <article className="container-site pt-8 lg:pt-12">
@@ -101,7 +102,7 @@ export default async function ArticlePage({ params }: Props) {
             </nav>
 
             <header className="max-w-3xl">
-              <ArticleMeta article={a} showDate />
+              <ArticleMeta article={a} showDate linkCategory />
               <h1 className="mt-3 text-[30px] leading-[1.15] sm:text-h1 lg:text-[46px] lg:leading-[1.12]">{a.title}</h1>
               <p className="mt-4 font-medium text-lead text-brand-muted">{a.excerpt}</p>
               <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-y border-brand-line py-4">

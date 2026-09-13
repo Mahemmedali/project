@@ -36,7 +36,7 @@ export function LogoLockup({
       <LogoMark size={size} priority={priority} />
       <span
         className={cn(
-          'font-heading leading-none font-black',
+          'font-heading leading-none font-bold',
           tone === 'navy' ? 'text-brand-navy' : 'text-white',
         )}
         style={{ fontSize: size * 0.42 }}

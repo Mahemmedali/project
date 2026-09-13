@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import type { ReactNode } from 'react'
-import { Inter, Merriweather } from 'next/font/google'
+import { Inter } from 'next/font/google'
+import { preload } from 'react-dom'
 import { notFound } from 'next/navigation'
 import { NextIntlClientProvider, hasLocale } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
@@ -10,20 +11,16 @@ import { Header } from '@/components/layout/Header'
 import { Ticker } from '@/components/layout/Ticker'
 import { Footer } from '@/components/layout/Footer'
 import { AlternatesProvider } from '@/components/layout/AlternatesContext'
+import { Analytics } from '@/components/layout/Analytics'
 import '@/styles/globals.css'
 
-/* Brend şriftləri — build zamanı self-host edilir (public/_next/static), Google-a runtime sorğu yoxdur */
-const merriweather = Merriweather({
-  subsets: ['latin', 'latin-ext', 'cyrillic'],
-  weight: ['700', '900'],
-  variable: '--font-merriweather',
-  display: 'swap',
-})
+/* Inter — next/font (variable, build zamanı self-host). Merriweather — public/fonts (bax globals.css) */
 const inter = Inter({
   subsets: ['latin', 'latin-ext', 'cyrillic'],
   weight: ['400', '500', '600', '700'],
   variable: '--font-inter',
   display: 'swap',
+  preload: false,
 })
 
 export function generateStaticParams() {
@@ -38,8 +35,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: { default: `${SITE_NAME} — ${t('tagline')}`, template: `%s — ${SITE_NAME}` },
     description: t('description'),
     applicationName: SITE_NAME,
-    icons: { icon: '/brand/gmb-logo.png', apple: '/brand/gmb-logo.png' },
-    openGraph: { siteName: SITE_NAME, type: 'website', images: ['/brand/gmb-logo.png'] },
+    openGraph: { siteName: SITE_NAME, type: 'website', images: ['/brand/gmb-og.png'] },
     robots: { index: true, follow: true },
   }
 }
@@ -61,9 +57,13 @@ export default async function LocaleLayout({
   if (!hasLocale(routing.locales, locale)) notFound()
   setRequestLocale(locale as Locale)
   const t = await getTranslations('nav')
+  // Başlıq şriftinin yalnız bu dil üçün lazım olan alt-dəstlərini əvvəlcədən yüklə (LCP)
+  for (const sub of locale === 'ru' ? ['latin', 'cyrillic'] : ['latin', 'latin-ext']) {
+    preload(`/fonts/merriweather-${sub}-700-normal.woff2`, { as: 'font', type: 'font/woff2', crossOrigin: 'anonymous' })
+  }
 
   return (
-    <html lang={locale} className={`${merriweather.variable} ${inter.variable}`}>
+    <html lang={locale} className={inter.variable}>
       <body className="flex min-h-screen flex-col">
         <NextIntlClientProvider>
           <AlternatesProvider>
@@ -79,6 +79,7 @@ export default async function LocaleLayout({
               {children}
             </main>
             <Footer />
+            <Analytics />
           </AlternatesProvider>
         </NextIntlClientProvider>
       </body>
